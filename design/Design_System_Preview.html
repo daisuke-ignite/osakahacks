@@ -1,0 +1,2260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Osakahacks Design System - Theme Variations</title>
+    <style>
+        /* CSS Variables - Theme A (Default/Vibrant) */
+        :root {
+            /* Primary Colors - 大阪のエネルギーを表現 */
+            --color-primary: #FF6B35;
+            --color-primary-dark: #E55A2B;
+            --color-primary-light: #FF8C5F;
+            
+            /* Secondary Colors - 信頼と安心 */
+            --color-secondary: #004E89;
+            --color-secondary-dark: #003A66;
+            --color-secondary-light: #0066B3;
+            
+            /* Accent Colors */
+            --color-accent: #F77F00;
+            --color-success: #06A77D;
+            --color-warning: #FFB627;
+            --color-error: #D62828;
+            
+            /* Neutral Colors */
+            --color-text-primary: #1A1A1A;
+            --color-text-secondary: #4A4A4A;
+            --color-text-muted: #757575;
+            --color-background: #FFFFFF;
+            --color-background-alt: #F8F9FA;
+            --color-border: #E0E0E0;
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+            
+            /* Typography - Theme A (Vibrant) */
+            --font-heading: 'Inter', 'Noto Sans JP', sans-serif;
+            --font-body: 'Inter', 'Noto Sans JP', sans-serif;
+            
+            --text-xs: 0.75rem;
+            --text-sm: 0.875rem;
+            --text-base: 1rem;
+            --text-lg: 1.125rem;
+            --text-xl: 1.25rem;
+            --text-2xl: 1.5rem;
+            --text-3xl: 1.875rem;
+            --text-4xl: 2.25rem;
+            --text-5xl: 3rem;
+            
+            --font-normal: 400;
+            --font-medium: 500;
+            --font-semibold: 600;
+            --font-bold: 700;
+            
+            --leading-tight: 1.25;
+            --leading-normal: 1.5;
+            --leading-relaxed: 1.75;
+        }
+        
+        /* Theme B (Calm/Minimal) Variables */
+        .theme-b {
+            /* Primary Colors - Calm Blue/Teal */
+            --color-primary: #2C5F7C;
+            --color-primary-dark: #1E4255;
+            --color-primary-light: #4A7FA0;
+            
+            /* Secondary Colors */
+            --color-secondary: #4A90A4;
+            --color-secondary-dark: #2E5A68;
+            --color-secondary-light: #6BB3C7;
+            
+            /* Accent Colors */
+            --color-accent: #5B9A8B;
+            --color-success: #4A9B8A;
+            --color-warning: #D4A574;
+            --color-error: #C85A5A;
+            
+            /* Neutral Colors */
+            --color-text-primary: #2C3E50;
+            --color-text-secondary: #5A6C7D;
+            --color-text-muted: #8A9BA8;
+            --color-background: #FAFBFC;
+            --color-background-alt: #F5F7F9;
+            --color-border: #D1D9E0;
+            
+            /* Typography - Theme B (Calm) - Slightly smaller, more relaxed */
+            --font-heading: 'Inter', 'Noto Sans JP', sans-serif;
+            --font-body: 'Inter', 'Noto Sans JP', sans-serif;
+            
+            --text-xs: 0.75rem;
+            --text-sm: 0.875rem;
+            --text-base: 1rem;
+            --text-lg: 1.0625rem;
+            --text-xl: 1.1875rem;
+            --text-2xl: 1.375rem;
+            --text-3xl: 1.75rem;
+            --text-4xl: 2rem;
+            --text-5xl: 2.75rem;
+            
+            --leading-tight: 1.3;
+            --leading-normal: 1.65;
+            --leading-relaxed: 1.85;
+        }
+        
+        /* Theme C (Night/Dark) Variables */
+        .theme-c {
+            /* Primary Colors - Neon Cyan/Purple */
+            --color-primary: #00D9FF;
+            --color-primary-dark: #00B8D9;
+            --color-primary-light: #33E0FF;
+            
+            /* Secondary Colors */
+            --color-secondary: #8B5CF6;
+            --color-secondary-dark: #6D28D9;
+            --color-secondary-light: #A78BFA;
+            
+            /* Accent Colors */
+            --color-accent: #EC4899;
+            --color-success: #10B981;
+            --color-warning: #F59E0B;
+            --color-error: #EF4444;
+            
+            /* Neutral Colors - Dark Theme */
+            --color-text-primary: #F3F4F6;
+            --color-text-secondary: #D1D5DB;
+            --color-text-muted: #9CA3AF;
+            --color-background: #1F2937;
+            --color-background-alt: #111827;
+            --color-border: #374151;
+            
+            /* Typography - Theme C (Night) - Sharp, high contrast */
+            --font-heading: 'Inter', 'Noto Sans JP', sans-serif;
+            --font-body: 'Inter', 'Noto Sans JP', sans-serif;
+            
+            --text-xs: 0.75rem;
+            --text-sm: 0.875rem;
+            --text-base: 1rem;
+            --text-lg: 1.125rem;
+            --text-xl: 1.25rem;
+            --text-2xl: 1.5rem;
+            --text-3xl: 1.875rem;
+            --text-4xl: 2.25rem;
+            --text-5xl: 3rem;
+            
+            --leading-tight: 1.2;
+            --leading-normal: 1.5;
+            --leading-relaxed: 1.7;
+            
+            letter-spacing: 0.01em;
+        }
+        
+        /* Theme D (Bright/Sunny) Variables */
+        .theme-d {
+            /* Primary Colors - Bright Yellow/Orange */
+            --color-primary: #FFB800;
+            --color-primary-dark: #E6A500;
+            --color-primary-light: #FFC733;
+            
+            /* Secondary Colors */
+            --color-secondary: #FF6B9D;
+            --color-secondary-dark: #E64A7D;
+            --color-secondary-light: #FF8AB3;
+            
+            /* Accent Colors */
+            --color-accent: #FF8C42;
+            --color-success: #4ECDC4;
+            --color-warning: #FFD93D;
+            --color-error: #FF6B6B;
+            
+            /* Neutral Colors - Bright Theme */
+            --color-text-primary: #1A1A1A;
+            --color-text-secondary: #4A4A4A;
+            --color-text-muted: #757575;
+            --color-background: #FFFFFF;
+            --color-background-alt: #FFFBF0;
+            --color-border: #FFE5B4;
+            
+            /* Typography - Theme D (Bright) - Energetic, bold */
+            --font-heading: 'Inter', 'Noto Sans JP', sans-serif;
+            --font-body: 'Inter', 'Noto Sans JP', sans-serif;
+            
+            --text-xs: 0.75rem;
+            --text-sm: 0.875rem;
+            --text-base: 1rem;
+            --text-lg: 1.125rem;
+            --text-xl: 1.25rem;
+            --text-2xl: 1.5rem;
+            --text-3xl: 1.875rem;
+            --text-4xl: 2.25rem;
+            --text-5xl: 3rem;
+            
+            --leading-tight: 1.25;
+            --leading-normal: 1.5;
+            --leading-relaxed: 1.75;
+        }
+        
+        /* Theme E (Fresh/Spring) Variables */
+        .theme-e {
+            /* Primary Colors - Fresh Green/Mint */
+            --color-primary: #00C9A7;
+            --color-primary-dark: #00A689;
+            --color-primary-light: #33D4B8;
+            
+            /* Secondary Colors */
+            --color-secondary: #7B68EE;
+            --color-secondary-dark: #5F4FD6;
+            --color-secondary-light: #9B8AF0;
+            
+            /* Accent Colors */
+            --color-accent: #FF6B9D;
+            --color-success: #4ECDC4;
+            --color-warning: #FFD93D;
+            --color-error: #FF6B6B;
+            
+            /* Neutral Colors - Fresh Theme */
+            --color-text-primary: #1A1A1A;
+            --color-text-secondary: #4A4A4A;
+            --color-text-muted: #757575;
+            --color-background: #FFFFFF;
+            --color-background-alt: #F0FFF8;
+            --color-border: #E0F5EF;
+            
+            /* Typography - Theme E (Fresh) - Clean, modern */
+            --font-heading: 'Inter', 'Noto Sans JP', sans-serif;
+            --font-body: 'Inter', 'Noto Sans JP', sans-serif;
+            
+            --text-xs: 0.75rem;
+            --text-sm: 0.875rem;
+            --text-base: 1rem;
+            --text-lg: 1.125rem;
+            --text-xl: 1.25rem;
+            --text-2xl: 1.5rem;
+            --text-3xl: 1.875rem;
+            --text-4xl: 2.25rem;
+            --text-5xl: 3rem;
+            
+            --leading-tight: 1.3;
+            --leading-normal: 1.6;
+            --leading-relaxed: 1.8;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            color: var(--color-text-primary);
+            background-color: #F0F0F0;
+            line-height: var(--leading-normal);
+            padding: 2rem 1rem;
+        }
+        
+        .page-header {
+            max-width: 1400px;
+            margin: 0 auto 3rem;
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+        
+        .page-header p {
+            font-size: 1.125rem;
+            color: #666;
+        }
+        
+        .theme-section {
+            margin-bottom: 4rem;
+            padding: 2rem 0;
+        }
+        
+        .theme-b .theme-section {
+            background-color: var(--color-background-alt);
+            padding: 2rem;
+            border-radius: 0.5rem;
+        }
+        
+        .theme-c .theme-section {
+            background-color: var(--color-background-alt);
+            padding: 2rem;
+            border-radius: 0.5rem;
+        }
+        
+        .theme-d .theme-section {
+            background-color: var(--color-background-alt);
+            padding: 2rem;
+            border-radius: 0.5rem;
+        }
+        
+        .theme-e .theme-section {
+            background-color: var(--color-background-alt);
+            padding: 2rem;
+            border-radius: 0.5rem;
+        }
+        
+        .theme-header {
+            max-width: 1200px;
+            margin: 0 auto 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid var(--color-primary);
+        }
+        
+        .theme-header h2 {
+            font-size: var(--text-3xl);
+            font-weight: var(--font-bold);
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        
+        .theme-header p {
+            font-size: var(--text-base);
+            color: var(--color-text-secondary);
+            line-height: var(--leading-relaxed);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: var(--color-background);
+            padding: 2rem;
+            border-radius: 0.5rem;
+        }
+        
+        .theme-c .container {
+            background-color: var(--color-background);
+        }
+        
+        h1 {
+            font-size: var(--text-4xl);
+            font-weight: var(--font-bold);
+            margin-bottom: 2rem;
+            color: var(--color-primary);
+        }
+        
+        h2 {
+            font-size: var(--text-2xl);
+            font-weight: var(--font-bold);
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--color-border);
+        }
+        
+        h3 {
+            font-size: var(--text-xl);
+            font-weight: var(--font-semibold);
+            margin: 1.5rem 0 1rem;
+        }
+        
+        h4 {
+            font-size: var(--text-lg);
+            font-weight: var(--font-semibold);
+            margin: 1rem 0 0.5rem;
+        }
+        
+        .section {
+            margin-bottom: 3rem;
+        }
+        
+        /* Typography Section */
+        .type-scale {
+            display: grid;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .type-sample {
+            padding: 1rem;
+            background-color: var(--color-background-alt);
+            border-radius: 0.375rem;
+            border-left: 4px solid var(--color-primary);
+        }
+        
+        .theme-c .type-sample {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+        
+        .theme-d .type-sample {
+            background-color: rgba(255, 184, 0, 0.08);
+        }
+        
+        .theme-e .type-sample {
+            background-color: rgba(0, 201, 167, 0.08);
+        }
+        
+        .type-sample-label {
+            font-size: var(--text-xs);
+            font-weight: var(--font-semibold);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--color-text-muted);
+            margin-bottom: 0.5rem;
+        }
+        
+        .type-sample-heading {
+            font-family: var(--font-heading);
+            font-weight: var(--font-bold);
+            line-height: var(--leading-tight);
+            color: var(--color-text-primary);
+        }
+        
+        .type-sample-body {
+            font-family: var(--font-body);
+            font-weight: var(--font-normal);
+            line-height: var(--leading-normal);
+            color: var(--color-text-secondary);
+        }
+        
+        .type-sample-caption {
+            font-size: var(--text-sm);
+            color: var(--color-text-muted);
+            font-weight: var(--font-normal);
+        }
+        
+        .font-info {
+            background-color: var(--color-background-alt);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-left: 4px solid var(--color-primary);
+        }
+        
+        .theme-c .font-info {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+        
+        .theme-d .font-info {
+            background-color: rgba(255, 184, 0, 0.08);
+        }
+        
+        .theme-e .font-info {
+            background-color: rgba(0, 201, 167, 0.08);
+        }
+        
+        .font-info h3 {
+            font-size: var(--text-lg);
+            font-weight: var(--font-semibold);
+            margin-bottom: 1rem;
+            color: var(--color-text-primary);
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-top: 0;
+        }
+        
+        .font-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        
+        .font-info-item {
+            padding: 1rem;
+            background-color: var(--color-background);
+            border-radius: 0.375rem;
+            border: 1px solid var(--color-border);
+        }
+        
+        .theme-c .font-info-item {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-color: var(--color-border);
+        }
+        
+        .font-info-label {
+            font-size: var(--text-xs);
+            font-weight: var(--font-semibold);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--color-text-muted);
+            margin-bottom: 0.5rem;
+        }
+        
+        .font-info-value {
+            font-size: var(--text-base);
+            color: var(--color-text-primary);
+            font-family: monospace;
+            word-break: break-all;
+        }
+        
+        .font-preview {
+            font-size: var(--text-lg);
+            color: var(--color-text-primary);
+            margin-top: 0.5rem;
+            line-height: var(--leading-normal);
+        }
+        
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .color-card {
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .color-swatch {
+            height: 100px;
+        }
+        
+        .color-info {
+            padding: 1rem;
+            background-color: var(--color-background);
+        }
+        
+        .theme-c .color-info {
+            background-color: var(--color-background);
+        }
+        
+        .theme-d .color-info {
+            background-color: var(--color-background);
+        }
+        
+        .theme-e .color-info {
+            background-color: var(--color-background);
+        }
+        
+        .color-name {
+            font-weight: var(--font-semibold);
+            margin-bottom: 0.25rem;
+            color: var(--color-text-primary);
+        }
+        
+        .color-value {
+            font-size: var(--text-sm);
+            color: var(--color-text-muted);
+            font-family: monospace;
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1.5rem;
+            font-size: var(--text-base);
+            font-weight: var(--font-semibold);
+            border-radius: 0.5rem;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            margin: 0.5rem;
+            font-family: var(--font-body);
+        }
+        
+        .btn-primary {
+            background-color: var(--color-primary);
+            color: white;
+            border-color: var(--color-primary);
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--color-primary-dark);
+            border-color: var(--color-primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .btn-secondary {
+            background-color: var(--color-secondary);
+            color: white;
+            border-color: var(--color-secondary);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--color-secondary-dark);
+            border-color: var(--color-secondary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            color: var(--color-primary);
+            border-color: var(--color-primary);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--color-primary);
+            color: white;
+        }
+        
+        /* Badges */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.25rem;
+            font-size: var(--text-sm);
+            font-weight: var(--font-semibold);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin: 0.25rem;
+            font-family: var(--font-body);
+        }
+        
+        .theme-default .badge-living {
+            background-color: #FFE5D9;
+            color: #D62828;
+        }
+        
+        .theme-b .badge-living {
+            background-color: #E8F4F8;
+            color: #2C5F7C;
+        }
+        
+        .theme-c .badge-living {
+            background-color: rgba(0, 217, 255, 0.2);
+            color: #00D9FF;
+        }
+        
+        .theme-default .badge-experience {
+            background-color: #D4E4F7;
+            color: #004E89;
+        }
+        
+        .theme-b .badge-experience {
+            background-color: #E0F2F5;
+            color: #4A90A4;
+        }
+        
+        .theme-c .badge-experience {
+            background-color: rgba(139, 92, 246, 0.2);
+            color: #A78BFA;
+        }
+        
+        .theme-default .badge-eating {
+            background-color: #FFF3CD;
+            color: #F77F00;
+        }
+        
+        .theme-b .badge-eating {
+            background-color: #F5F0E8;
+            color: #5B9A8B;
+        }
+        
+        .theme-c .badge-eating {
+            background-color: rgba(236, 72, 153, 0.2);
+            color: #EC4899;
+        }
+        
+        .theme-default .badge-stay {
+            background-color: #D1F2EB;
+            color: #06A77D;
+        }
+        
+        .theme-b .badge-stay {
+            background-color: #E8F5F0;
+            color: #4A9B8A;
+        }
+        
+        .theme-c .badge-stay {
+            background-color: rgba(16, 185, 129, 0.2);
+            color: #10B981;
+        }
+        
+        .theme-default .badge-column {
+            background-color: #E8DAEF;
+            color: #7D3C98;
+        }
+        
+        .theme-b .badge-column {
+            background-color: #F0E8F5;
+            color: #6D5B8A;
+        }
+        
+        .theme-c .badge-column {
+            background-color: rgba(139, 92, 246, 0.2);
+            color: #C4B5FD;
+        }
+        
+        .theme-d .badge-living {
+            background-color: #FFF4E0;
+            color: #E6A500;
+        }
+        
+        .theme-d .badge-experience {
+            background-color: #FFE5F0;
+            color: #E64A7D;
+        }
+        
+        .theme-d .badge-eating {
+            background-color: #FFF0E5;
+            color: #FF8C42;
+        }
+        
+        .theme-d .badge-stay {
+            background-color: #E0F7F5;
+            color: #4ECDC4;
+        }
+        
+        .theme-d .badge-column {
+            background-color: #F0E5FF;
+            color: #7B68EE;
+        }
+        
+        .theme-e .badge-living {
+            background-color: #E0F7F2;
+            color: #00A689;
+        }
+        
+        .theme-e .badge-experience {
+            background-color: #F0E5FF;
+            color: #5F4FD6;
+        }
+        
+        .theme-e .badge-eating {
+            background-color: #FFE5F0;
+            color: #E64A7D;
+        }
+        
+        .theme-e .badge-stay {
+            background-color: #E0F7F5;
+            color: #4ECDC4;
+        }
+        
+        .theme-e .badge-column {
+            background-color: #F5E5FF;
+            color: #9B8AF0;
+        }
+        
+        /* Article Card */
+        .article-card {
+            background-color: var(--color-background);
+            border-radius: 0.75rem;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            max-width: 400px;
+            margin: 1rem;
+        }
+        
+        .article-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+        }
+        
+        .article-card__link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
+        .article-card__image {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--color-primary-light), var(--color-secondary-light));
+        }
+        
+        .article-card__image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .article-card:hover .article-card__image img {
+            transform: scale(1.05);
+        }
+        
+        .article-card__badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background-color: var(--color-primary);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.25rem;
+            font-size: var(--text-sm);
+            font-weight: var(--font-semibold);
+            text-transform: uppercase;
+        }
+        
+        .article-card__content {
+            padding: 1.5rem;
+        }
+        
+        .article-card__title {
+            font-size: var(--text-xl);
+            font-weight: var(--font-bold);
+            line-height: var(--leading-tight);
+            margin-bottom: 0.75rem;
+            color: var(--color-text-primary);
+            font-family: var(--font-heading);
+        }
+        
+        .article-card__excerpt {
+            font-size: var(--text-base);
+            line-height: var(--leading-normal);
+            color: var(--color-text-secondary);
+            margin-bottom: 1rem;
+            font-family: var(--font-body);
+        }
+        
+        .article-card__meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: var(--text-sm);
+            color: var(--color-text-muted);
+        }
+        
+        /* Widget */
+        .widget {
+            background-color: var(--color-background);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow-sm);
+            max-width: 350px;
+        }
+        
+        .widget__title {
+            font-size: var(--text-lg);
+            font-weight: var(--font-bold);
+            margin-bottom: 1rem;
+            color: var(--color-text-primary);
+            font-family: var(--font-heading);
+        }
+        
+        .widget-booking {
+            background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-secondary-light) 100%);
+            color: white;
+        }
+        
+        .widget-booking .widget__title {
+            color: white;
+        }
+        
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        
+        .form-group label {
+            display: block;
+            font-size: var(--text-sm);
+            font-weight: var(--font-medium);
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 0.375rem;
+            font-size: var(--text-base);
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-family: var(--font-body);
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: white;
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .btn-block {
+            width: 100%;
+        }
+        
+        /* Ranking List */
+        .ranking-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .ranking-list__item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--color-border);
+        }
+        
+        .ranking-list__item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .ranking-list__number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            flex-shrink: 0;
+            font-size: var(--text-lg);
+            font-weight: var(--font-bold);
+            color: white;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+            border-radius: 0.375rem;
+        }
+        
+        .ranking-list__info {
+            flex: 1;
+        }
+        
+        .ranking-list__title {
+            font-size: var(--text-sm);
+            font-weight: var(--font-semibold);
+            line-height: var(--leading-tight);
+            margin: 0 0 0.5rem 0;
+            color: var(--color-text-primary);
+            font-family: var(--font-heading);
+        }
+        
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .theme-header h2 {
+                font-size: var(--text-2xl);
+            }
+            
+            .demo-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-header">
+        <h1>Osakahacks Design System</h1>
+        <p>Theme Variations - Compare three distinct visual themes</p>
+    </div>
+    
+    <!-- Theme A: Vibrant (Default) -->
+    <section class="theme-default theme-section">
+        <div class="theme-header">
+            <h2>Theme A - Vibrant</h2>
+            <p>Energetic and bold, capturing Osaka's vibrant energy with vivid orange and deep blue. Typography emphasizes bold headings with energetic spacing.</p>
+        </div>
+        
+        <div class="container">
+            <!-- Typography -->
+            <div class="section">
+                <h2>Typography</h2>
+                
+                <!-- Font Information -->
+                <div class="font-info">
+                    <h3>Font Family</h3>
+                    <div class="font-info-grid">
+                        <div class="font-info-item">
+                            <div class="font-info-label">Heading Font</div>
+                            <div class="font-info-value">Inter, Noto Sans JP, sans-serif</div>
+                            <div class="font-preview" style="font-family: var(--font-heading); font-weight: var(--font-bold);">The quick brown fox jumps over the lazy dog</div>
+                        </div>
+                        <div class="font-info-item">
+                            <div class="font-info-label">Body Font</div>
+                            <div class="font-info-value">Inter, Noto Sans JP, sans-serif</div>
+                            <div class="font-preview" style="font-family: var(--font-body); font-weight: var(--font-normal);">The quick brown fox jumps over the lazy dog</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="type-scale">
+                    <div class="type-sample">
+                        <div class="type-sample-label">Heading 1</div>
+                        <h1 class="type-sample-heading" style="font-size: var(--text-4xl);">Osakahacks Design System</h1>
+                    </div>
+                    <div class="type-sample">
+                        <div class="type-sample-label">Heading 2</div>
+                        <h2 class="type-sample-heading" style="font-size: var(--text-2xl); border-bottom: none; padding-bottom: 0; margin: 0;">Section Title</h2>
+                    </div>
+                    <div class="type-sample">
+                        <div class="type-sample-label">Heading 3</div>
+                        <h3 class="type-sample-heading" style="font-size: var(--text-xl); margin: 0;">Subsection Title</h3>
+                    </div>
+                    <div class="type-sample">
+                        <div class="type-sample-label">Body Text</div>
+                        <p class="type-sample-body" style="font-size: var(--text-base); margin: 0;">This is body text that demonstrates the default font family and line height. It should be comfortable to read and maintain good readability across different screen sizes.</p>
+                    </div>
+                    <div class="type-sample">
+                        <div class="type-sample-label">Caption</div>
+                        <p class="type-sample-caption" style="margin: 0;">Small caption text for metadata and secondary information.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Color Palette -->
+            <div class="section">
+                <h2>Color Palette</h2>
+                
+                <h3>Primary Colors</h3>
+                <div class="color-grid">
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--color-primary);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Primary</div>
+                            <div class="color-value">#FF6B35</div>
+                        </div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--color-primary-dark);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Primary Dark</div>
+                            <div class="color-value">#E55A2B</div>
+                        </div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--color-primary-light);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Primary Light</div>
+                            <div class="color-value">#FF8C5F</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3>Secondary Colors</h3>
+                <div class="color-grid">
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--color-secondary);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Secondary</div>
+                            <div class="color-value">#004E89</div>
+                        </div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--color-secondary-dark);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Secondary Dark</div>
+                            <div class="color-value">#003A66</div>
+                        </div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--color-secondary-light);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Secondary Light</div>
+                            <div class="color-value">#0066B3</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3>Accent Colors</h3>
+                <div class="color-grid">
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--color-accent);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Accent</div>
+                            <div class="color-value">#F77F00</div>
+                        </div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--color-success);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Success</div>
+                            <div class="color-value">#06A77D</div>
+                        </div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--color-warning);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Warning</div>
+                            <div class="color-value">#FFB627</div>
+                        </div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--color-error);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Error</div>
+                            <div class="color-value">#D62828</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Buttons -->
+            <div class="section">
+                <h2>Buttons</h2>
+                <div>
+                    <button class="btn btn-primary">Primary Button</button>
+                    <button class="btn btn-secondary">Secondary Button</button>
+                    <button class="btn btn-outline">Outline Button</button>
+                </div>
+            </div>
+            
+            <!-- Badges -->
+            <div class="section">
+                <h2>Category Badges</h2>
+                <div>
+                    <span class="badge badge-living">Living</span>
+                    <span class="badge badge-experience">Experience</span>
+                    <span class="badge badge-eating">Eating Out</span>
+                    <span class="badge badge-stay">Stay</span>
+                    <span class="badge badge-column">Column</span>
+                </div>
+            </div>
+            
+            <!-- Components -->
+            <div class="section">
+                <h2>Components</h2>
+                
+                <div class="demo-grid">
+                    <!-- Article Card -->
+                    <div>
+                        <h3>Article Card</h3>
+                        <article class="article-card">
+                            <a href="#" class="article-card__link">
+                                <div class="article-card__image">
+                                    <span class="article-card__badge">Living</span>
+                                </div>
+                                <div class="article-card__content">
+                                    <h3 class="article-card__title">
+                                        How to Find an Apartment in Osaka
+                                    </h3>
+                                    <p class="article-card__excerpt">
+                                        A complete guide to finding and renting an apartment in Osaka as a foreigner...
+                                    </p>
+                                    <div class="article-card__meta">
+                                        <time datetime="2025-11-19">Nov 19, 2025</time>
+                                        <span class="article-card__read-time">5 min read</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
+                    </div>
+                    
+                    <!-- Booking Widget -->
+                    <div>
+                        <h3>Booking.com Widget</h3>
+                        <aside class="widget widget-booking">
+                            <h3 class="widget__title">Find Hotels in Osaka</h3>
+                            <div class="widget__content">
+                                <form class="booking-form">
+                                    <div class="form-group">
+                                        <label for="checkin-a">Check-in</label>
+                                        <input type="date" id="checkin-a" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="checkout-a">Check-out</label>
+                                        <input type="date" id="checkout-a" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="area-a">Area</label>
+                                        <select id="area-a" class="form-control">
+                                            <option value="">All Areas</option>
+                                            <option value="umeda">Umeda</option>
+                                            <option value="namba">Namba</option>
+                                            <option value="shinsaibashi">Shinsaibashi</option>
+                                        </select>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary btn-block">
+                                        Search Hotels
+                                    </button>
+                                </form>
+                            </div>
+                        </aside>
+                    </div>
+                    
+                    <!-- Ranking Widget -->
+                    <div>
+                        <h3>Ranking Widget</h3>
+                        <aside class="widget widget-ranking">
+                            <h3 class="widget__title">Ranking</h3>
+                            <div class="widget__content">
+                                <ol class="ranking-list">
+                                    <li class="ranking-list__item">
+                                        <span class="ranking-list__number">1</span>
+                                        <div class="ranking-list__info">
+                                            <h4 class="ranking-list__title">Best Ramen Shops in Osaka</h4>
+                                            <span class="badge badge-eating">Eating Out</span>
+                                        </div>
+                                    </li>
+                                    <li class="ranking-list__item">
+                                        <span class="ranking-list__number">2</span>
+                                        <div class="ranking-list__info">
+                                            <h4 class="ranking-list__title">How to Get a Visa in Osaka</h4>
+                                            <span class="badge badge-living">Living</span>
+                                        </div>
+                                    </li>
+                                    <li class="ranking-list__item">
+                                        <span class="ranking-list__number">3</span>
+                                        <div class="ranking-list__info">
+                                            <h4 class="ranking-list__title">Universal Studios Japan Guide</h4>
+                                            <span class="badge badge-experience">Experience</span>
+                                        </div>
+                                    </li>
+                                </ol>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Theme B: Calm -->
+    <section class="theme-b theme-section">
+        <div class="theme-header">
+            <h2>Theme B - Calm</h2>
+            <p>Minimal and serene, featuring calm blue and teal tones with relaxed typography. Slightly smaller heading sizes and increased line spacing for comfortable reading.</p>
+        </div>
+        
+        <div class="container">
+            <!-- Typography -->
+            <div class="section">
+                <h2>Typography</h2>
+                
+                <!-- Font Information -->
+                <div class="font-info">
+                    <h3>Font Family</h3>
+                    <div class="font-info-grid">
+                        <div class="font-info-item">
+                            <div class="font-info-label">Heading Font</div>
+                            <div class="font-info-value">Inter, Noto Sans JP, sans-serif</div>
+                            <div class="font-preview" style="font-family: var(--font-heading); font-weight: var(--font-bold);">The quick brown fox jumps over the lazy dog</div>
+                        </div>
+                        <div class="font-info-item">
+                            <div class="font-info-label">Body Font</div>
+                            <div class="font-info-value">Inter, Noto Sans JP, sans-serif</div>
+                            <div class="font-preview" style="font-family: var(--font-body); font-weight: var(--font-normal);">The quick brown fox jumps over the lazy dog</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="type-scale">
+                    <div class="type-sample">
+                        <div class="type-sample-label">Heading 1</div>
+                        <h1 class="type-sample-heading" style="font-size: var(--text-4xl);">Osakahacks Design System</h1>
+                    </div>
+                    <div class="type-sample">
+                        <div class="type-sample-label">Heading 2</div>
+                        <h2 class="type-sample-heading" style="font-size: var(--text-2xl); border-bottom: none; padding-bottom: 0; margin: 0;">Section Title</h2>
+                    </div>
+                    <div class="type-sample">
+                        <div class="type-sample-label">Heading 3</div>
+                        <h3 class="type-sample-heading" style="font-size: var(--text-xl); margin: 0;">Subsection Title</h3>
+                    </div>
+                    <div class="type-sample">
+                        <div class="type-sample-label">Body Text</div>
+                        <p class="type-sample-body" style="font-size: var(--text-base); margin: 0;">This is body text that demonstrates the calm theme's relaxed typography. The increased line spacing and slightly reduced heading sizes create a more comfortable reading experience.</p>
+                    </div>
+                    <div class="type-sample">
+                        <div class="type-sample-label">Caption</div>
+                        <p class="type-sample-caption" style="margin: 0;">Small caption text for metadata and secondary information.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Color Palette -->
+            <div class="section">
+                <h2>Color Palette</h2>
+                
+                <h3>Primary Colors</h3>
+                <div class="color-grid">
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--color-primary);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Primary</div>
+                            <div class="color-value">#2C5F7C</div>
+                        </div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--color-primary-dark);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Primary Dark</div>
+                            <div class="color-value">#1E4255</div>
+                        </div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--color-primary-light);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Primary Light</div>
+                            <div class="color-value">#4A7FA0</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3>Secondary Colors</h3>
+                <div class="color-grid">
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--color-secondary);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Secondary</div>
+                            <div class="color-value">#4A90A4</div>
+                        </div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--color-secondary-dark);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Secondary Dark</div>
+                            <div class="color-value">#2E5A68</div>
+                        </div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--color-secondary-light);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Secondary Light</div>
+                            <div class="color-value">#6BB3C7</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3>Accent Colors</h3>
+                <div class="color-grid">
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--color-accent);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Accent</div>
+                            <div class="color-value">#5B9A8B</div>
+                        </div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--color-success);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Success</div>
+                            <div class="color-value">#4A9B8A</div>
+                        </div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--color-warning);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Warning</div>
+                            <div class="color-value">#D4A574</div>
+                        </div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--color-error);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Error</div>
+                            <div class="color-value">#C85A5A</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Buttons -->
+            <div class="section">
+                <h2>Buttons</h2>
+                <div>
+                    <button class="btn btn-primary">Primary Button</button>
+                    <button class="btn btn-secondary">Secondary Button</button>
+                    <button class="btn btn-outline">Outline Button</button>
+                </div>
+            </div>
+            
+            <!-- Badges -->
+            <div class="section">
+                <h2>Category Badges</h2>
+                <div>
+                    <span class="badge badge-living">Living</span>
+                    <span class="badge badge-experience">Experience</span>
+                    <span class="badge badge-eating">Eating Out</span>
+                    <span class="badge badge-stay">Stay</span>
+                    <span class="badge badge-column">Column</span>
+                </div>
+            </div>
+            
+            <!-- Components -->
+            <div class="section">
+                <h2>Components</h2>
+                
+                <div class="demo-grid">
+                    <!-- Article Card -->
+                    <div>
+                        <h3>Article Card</h3>
+                        <article class="article-card">
+                            <a href="#" class="article-card__link">
+                                <div class="article-card__image">
+                                    <span class="article-card__badge">Living</span>
+                                </div>
+                                <div class="article-card__content">
+                                    <h3 class="article-card__title">
+                                        How to Find an Apartment in Osaka
+                                    </h3>
+                                    <p class="article-card__excerpt">
+                                        A complete guide to finding and renting an apartment in Osaka as a foreigner...
+                                    </p>
+                                    <div class="article-card__meta">
+                                        <time datetime="2025-11-19">Nov 19, 2025</time>
+                                        <span class="article-card__read-time">5 min read</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
+                    </div>
+                    
+                    <!-- Booking Widget -->
+                    <div>
+                        <h3>Booking.com Widget</h3>
+                        <aside class="widget widget-booking">
+                            <h3 class="widget__title">Find Hotels in Osaka</h3>
+                            <div class="widget__content">
+                                <form class="booking-form">
+                                    <div class="form-group">
+                                        <label for="checkin-b">Check-in</label>
+                                        <input type="date" id="checkin-b" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="checkout-b">Check-out</label>
+                                        <input type="date" id="checkout-b" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="area-b">Area</label>
+                                        <select id="area-b" class="form-control">
+                                            <option value="">All Areas</option>
+                                            <option value="umeda">Umeda</option>
+                                            <option value="namba">Namba</option>
+                                            <option value="shinsaibashi">Shinsaibashi</option>
+                                        </select>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary btn-block">
+                                        Search Hotels
+                                    </button>
+                                </form>
+                            </div>
+                        </aside>
+                    </div>
+                    
+                    <!-- Ranking Widget -->
+                    <div>
+                        <h3>Ranking Widget</h3>
+                        <aside class="widget widget-ranking">
+                            <h3 class="widget__title">Ranking</h3>
+                            <div class="widget__content">
+                                <ol class="ranking-list">
+                                    <li class="ranking-list__item">
+                                        <span class="ranking-list__number">1</span>
+                                        <div class="ranking-list__info">
+                                            <h4 class="ranking-list__title">Best Ramen Shops in Osaka</h4>
+                                            <span class="badge badge-eating">Eating Out</span>
+                                        </div>
+                                    </li>
+                                    <li class="ranking-list__item">
+                                        <span class="ranking-list__number">2</span>
+                                        <div class="ranking-list__info">
+                                            <h4 class="ranking-list__title">How to Get a Visa in Osaka</h4>
+                                            <span class="badge badge-living">Living</span>
+                                        </div>
+                                    </li>
+                                    <li class="ranking-list__item">
+                                        <span class="ranking-list__number">3</span>
+                                        <div class="ranking-list__info">
+                                            <h4 class="ranking-list__title">Universal Studios Japan Guide</h4>
+                                            <span class="badge badge-experience">Experience</span>
+                                        </div>
+                                    </li>
+                                </ol>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Theme C: Night -->
+    <section class="theme-c theme-section">
+        <div class="theme-header">
+            <h2>Theme C - Night</h2>
+            <p>Dark theme inspired by Osaka's neon-lit nightscape. Features high-contrast cyan and purple accents with sharp typography optimized for dark backgrounds.</p>
+        </div>
+        
+        <div class="container">
+            <!-- Typography -->
+            <div class="section">
+                <h2>Typography</h2>
+                
+                <!-- Font Information -->
+                <div class="font-info">
+                    <h3>Font Family</h3>
+                    <div class="font-info-grid">
+                        <div class="font-info-item">
+                            <div class="font-info-label">Heading Font</div>
+                            <div class="font-info-value">Inter, Noto Sans JP, sans-serif</div>
+                            <div class="font-preview" style="font-family: var(--font-heading); font-weight: var(--font-bold);">The quick brown fox jumps over the lazy dog</div>
+                        </div>
+                        <div class="font-info-item">
+                            <div class="font-info-label">Body Font</div>
+                            <div class="font-info-value">Inter, Noto Sans JP, sans-serif</div>
+                            <div class="font-preview" style="font-family: var(--font-body); font-weight: var(--font-normal);">The quick brown fox jumps over the lazy dog</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="type-scale">
+                    <div class="type-sample">
+                        <div class="type-sample-label">Heading 1</div>
+                        <h1 class="type-sample-heading" style="font-size: var(--text-4xl);">Osakahacks Design System</h1>
+                    </div>
+                    <div class="type-sample">
+                        <div class="type-sample-label">Heading 2</div>
+                        <h2 class="type-sample-heading" style="font-size: var(--text-2xl); border-bottom: none; padding-bottom: 0; margin: 0;">Section Title</h2>
+                    </div>
+                    <div class="type-sample">
+                        <div class="type-sample-label">Heading 3</div>
+                        <h3 class="type-sample-heading" style="font-size: var(--text-xl); margin: 0;">Subsection Title</h3>
+                    </div>
+                    <div class="type-sample">
+                        <div class="type-sample-label">Body Text</div>
+                        <p class="type-sample-body" style="font-size: var(--text-base); margin: 0;">This is body text optimized for dark backgrounds. The high contrast and sharp typography ensure excellent readability while maintaining the night theme's distinctive aesthetic.</p>
+                    </div>
+                    <div class="type-sample">
+                        <div class="type-sample-label">Caption</div>
+                        <p class="type-sample-caption" style="margin: 0;">Small caption text for metadata and secondary information.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Color Palette -->
+            <div class="section">
+                <h2>Color Palette</h2>
+                
+                <h3>Primary Colors</h3>
+                <div class="color-grid">
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--color-primary);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Primary</div>
+                            <div class="color-value">#00D9FF</div>
+                        </div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--color-primary-dark);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Primary Dark</div>
+                            <div class="color-value">#00B8D9</div>
+                        </div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--color-primary-light);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Primary Light</div>
+                            <div class="color-value">#33E0FF</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3>Secondary Colors</h3>
+                <div class="color-grid">
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--color-secondary);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Secondary</div>
+                            <div class="color-value">#8B5CF6</div>
+                        </div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--color-secondary-dark);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Secondary Dark</div>
+                            <div class="color-value">#6D28D9</div>
+                        </div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--color-secondary-light);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Secondary Light</div>
+                            <div class="color-value">#A78BFA</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3>Accent Colors</h3>
+                <div class="color-grid">
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--color-accent);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Accent</div>
+                            <div class="color-value">#EC4899</div>
+                        </div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--color-success);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Success</div>
+                            <div class="color-value">#10B981</div>
+                        </div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--color-warning);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Warning</div>
+                            <div class="color-value">#F59E0B</div>
+                        </div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--color-error);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Error</div>
+                            <div class="color-value">#EF4444</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Buttons -->
+            <div class="section">
+                <h2>Buttons</h2>
+                <div>
+                    <button class="btn btn-primary">Primary Button</button>
+                    <button class="btn btn-secondary">Secondary Button</button>
+                    <button class="btn btn-outline">Outline Button</button>
+                </div>
+            </div>
+            
+            <!-- Badges -->
+            <div class="section">
+                <h2>Category Badges</h2>
+                <div>
+                    <span class="badge badge-living">Living</span>
+                    <span class="badge badge-experience">Experience</span>
+                    <span class="badge badge-eating">Eating Out</span>
+                    <span class="badge badge-stay">Stay</span>
+                    <span class="badge badge-column">Column</span>
+                </div>
+            </div>
+            
+            <!-- Components -->
+            <div class="section">
+                <h2>Components</h2>
+                
+                <div class="demo-grid">
+                    <!-- Article Card -->
+                    <div>
+                        <h3>Article Card</h3>
+                        <article class="article-card">
+                            <a href="#" class="article-card__link">
+                                <div class="article-card__image">
+                                    <span class="article-card__badge">Living</span>
+                                </div>
+                                <div class="article-card__content">
+                                    <h3 class="article-card__title">
+                                        How to Find an Apartment in Osaka
+                                    </h3>
+                                    <p class="article-card__excerpt">
+                                        A complete guide to finding and renting an apartment in Osaka as a foreigner...
+                                    </p>
+                                    <div class="article-card__meta">
+                                        <time datetime="2025-11-19">Nov 19, 2025</time>
+                                        <span class="article-card__read-time">5 min read</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
+                    </div>
+                    
+                    <!-- Booking Widget -->
+                    <div>
+                        <h3>Booking.com Widget</h3>
+                        <aside class="widget widget-booking">
+                            <h3 class="widget__title">Find Hotels in Osaka</h3>
+                            <div class="widget__content">
+                                <form class="booking-form">
+                                    <div class="form-group">
+                                        <label for="checkin-c">Check-in</label>
+                                        <input type="date" id="checkin-c" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="checkout-c">Check-out</label>
+                                        <input type="date" id="checkout-c" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="area-c">Area</label>
+                                        <select id="area-c" class="form-control">
+                                            <option value="">All Areas</option>
+                                            <option value="umeda">Umeda</option>
+                                            <option value="namba">Namba</option>
+                                            <option value="shinsaibashi">Shinsaibashi</option>
+                                        </select>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary btn-block">
+                                        Search Hotels
+                                    </button>
+                                </form>
+                            </div>
+                        </aside>
+                    </div>
+                    
+                    <!-- Ranking Widget -->
+                    <div>
+                        <h3>Ranking Widget</h3>
+                        <aside class="widget widget-ranking">
+                            <h3 class="widget__title">Ranking</h3>
+                            <div class="widget__content">
+                                <ol class="ranking-list">
+                                    <li class="ranking-list__item">
+                                        <span class="ranking-list__number">1</span>
+                                        <div class="ranking-list__info">
+                                            <h4 class="ranking-list__title">Best Ramen Shops in Osaka</h4>
+                                            <span class="badge badge-eating">Eating Out</span>
+                                        </div>
+                                    </li>
+                                    <li class="ranking-list__item">
+                                        <span class="ranking-list__number">2</span>
+                                        <div class="ranking-list__info">
+                                            <h4 class="ranking-list__title">How to Get a Visa in Osaka</h4>
+                                            <span class="badge badge-living">Living</span>
+                                        </div>
+                                    </li>
+                                    <li class="ranking-list__item">
+                                        <span class="ranking-list__number">3</span>
+                                        <div class="ranking-list__info">
+                                            <h4 class="ranking-list__title">Universal Studios Japan Guide</h4>
+                                            <span class="badge badge-experience">Experience</span>
+                                        </div>
+                                    </li>
+                                </ol>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Theme D: Bright/Sunny -->
+    <section class="theme-d theme-section">
+        <div class="theme-header">
+            <h2>Theme D - Bright/Sunny</h2>
+            <p>Energetic and cheerful, featuring bright yellow and pink tones that evoke Osaka's sunny and vibrant atmosphere. Bold typography with energetic spacing creates an uplifting experience.</p>
+        </div>
+        
+        <div class="container">
+            <!-- Typography -->
+            <div class="section">
+                <h2>Typography</h2>
+                
+                <!-- Font Information -->
+                <div class="font-info">
+                    <h3>Font Family</h3>
+                    <div class="font-info-grid">
+                        <div class="font-info-item">
+                            <div class="font-info-label">Heading Font</div>
+                            <div class="font-info-value">Inter, Noto Sans JP, sans-serif</div>
+                            <div class="font-preview" style="font-family: var(--font-heading); font-weight: var(--font-bold);">The quick brown fox jumps over the lazy dog</div>
+                        </div>
+                        <div class="font-info-item">
+                            <div class="font-info-label">Body Font</div>
+                            <div class="font-info-value">Inter, Noto Sans JP, sans-serif</div>
+                            <div class="font-preview" style="font-family: var(--font-body); font-weight: var(--font-normal);">The quick brown fox jumps over the lazy dog</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="type-scale">
+                    <div class="type-sample">
+                        <div class="type-sample-label">Heading 1</div>
+                        <h1 class="type-sample-heading" style="font-size: var(--text-4xl);">Osakahacks Design System</h1>
+                    </div>
+                    <div class="type-sample">
+                        <div class="type-sample-label">Heading 2</div>
+                        <h2 class="type-sample-heading" style="font-size: var(--text-2xl); border-bottom: none; padding-bottom: 0; margin: 0;">Section Title</h2>
+                    </div>
+                    <div class="type-sample">
+                        <div class="type-sample-label">Heading 3</div>
+                        <h3 class="type-sample-heading" style="font-size: var(--text-xl); margin: 0;">Subsection Title</h3>
+                    </div>
+                    <div class="type-sample">
+                        <div class="type-sample-label">Body Text</div>
+                        <p class="type-sample-body" style="font-size: var(--text-base); margin: 0;">This is body text that demonstrates the bright theme's energetic typography. The bold colors and cheerful palette create an uplifting and positive reading experience.</p>
+                    </div>
+                    <div class="type-sample">
+                        <div class="type-sample-label">Caption</div>
+                        <p class="type-sample-caption" style="margin: 0;">Small caption text for metadata and secondary information.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Color Palette -->
+            <div class="section">
+                <h2>Color Palette</h2>
+                
+                <h3>Primary Colors</h3>
+                <div class="color-grid">
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--color-primary);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Primary</div>
+                            <div class="color-value">#FFB800</div>
+                        </div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--color-primary-dark);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Primary Dark</div>
+                            <div class="color-value">#E6A500</div>
+                        </div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--color-primary-light);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Primary Light</div>
+                            <div class="color-value">#FFC733</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3>Secondary Colors</h3>
+                <div class="color-grid">
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--color-secondary);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Secondary</div>
+                            <div class="color-value">#FF6B9D</div>
+                        </div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--color-secondary-dark);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Secondary Dark</div>
+                            <div class="color-value">#E64A7D</div>
+                        </div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--color-secondary-light);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Secondary Light</div>
+                            <div class="color-value">#FF8AB3</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3>Accent Colors</h3>
+                <div class="color-grid">
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--color-accent);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Accent</div>
+                            <div class="color-value">#FF8C42</div>
+                        </div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--color-success);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Success</div>
+                            <div class="color-value">#4ECDC4</div>
+                        </div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--color-warning);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Warning</div>
+                            <div class="color-value">#FFD93D</div>
+                        </div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--color-error);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Error</div>
+                            <div class="color-value">#FF6B6B</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Buttons -->
+            <div class="section">
+                <h2>Buttons</h2>
+                <div>
+                    <button class="btn btn-primary">Primary Button</button>
+                    <button class="btn btn-secondary">Secondary Button</button>
+                    <button class="btn btn-outline">Outline Button</button>
+                </div>
+            </div>
+            
+            <!-- Badges -->
+            <div class="section">
+                <h2>Category Badges</h2>
+                <div>
+                    <span class="badge badge-living">Living</span>
+                    <span class="badge badge-experience">Experience</span>
+                    <span class="badge badge-eating">Eating Out</span>
+                    <span class="badge badge-stay">Stay</span>
+                    <span class="badge badge-column">Column</span>
+                </div>
+            </div>
+            
+            <!-- Components -->
+            <div class="section">
+                <h2>Components</h2>
+                
+                <div class="demo-grid">
+                    <!-- Article Card -->
+                    <div>
+                        <h3>Article Card</h3>
+                        <article class="article-card">
+                            <a href="#" class="article-card__link">
+                                <div class="article-card__image">
+                                    <span class="article-card__badge">Living</span>
+                                </div>
+                                <div class="article-card__content">
+                                    <h3 class="article-card__title">
+                                        How to Find an Apartment in Osaka
+                                    </h3>
+                                    <p class="article-card__excerpt">
+                                        A complete guide to finding and renting an apartment in Osaka as a foreigner...
+                                    </p>
+                                    <div class="article-card__meta">
+                                        <time datetime="2025-11-19">Nov 19, 2025</time>
+                                        <span class="article-card__read-time">5 min read</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
+                    </div>
+                    
+                    <!-- Booking Widget -->
+                    <div>
+                        <h3>Booking.com Widget</h3>
+                        <aside class="widget widget-booking">
+                            <h3 class="widget__title">Find Hotels in Osaka</h3>
+                            <div class="widget__content">
+                                <form class="booking-form">
+                                    <div class="form-group">
+                                        <label for="checkin-d">Check-in</label>
+                                        <input type="date" id="checkin-d" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="checkout-d">Check-out</label>
+                                        <input type="date" id="checkout-d" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="area-d">Area</label>
+                                        <select id="area-d" class="form-control">
+                                            <option value="">All Areas</option>
+                                            <option value="umeda">Umeda</option>
+                                            <option value="namba">Namba</option>
+                                            <option value="shinsaibashi">Shinsaibashi</option>
+                                        </select>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary btn-block">
+                                        Search Hotels
+                                    </button>
+                                </form>
+                            </div>
+                        </aside>
+                    </div>
+                    
+                    <!-- Ranking Widget -->
+                    <div>
+                        <h3>Ranking Widget</h3>
+                        <aside class="widget widget-ranking">
+                            <h3 class="widget__title">Ranking</h3>
+                            <div class="widget__content">
+                                <ol class="ranking-list">
+                                    <li class="ranking-list__item">
+                                        <span class="ranking-list__number">1</span>
+                                        <div class="ranking-list__info">
+                                            <h4 class="ranking-list__title">Best Ramen Shops in Osaka</h4>
+                                            <span class="badge badge-eating">Eating Out</span>
+                                        </div>
+                                    </li>
+                                    <li class="ranking-list__item">
+                                        <span class="ranking-list__number">2</span>
+                                        <div class="ranking-list__info">
+                                            <h4 class="ranking-list__title">How to Get a Visa in Osaka</h4>
+                                            <span class="badge badge-living">Living</span>
+                                        </div>
+                                    </li>
+                                    <li class="ranking-list__item">
+                                        <span class="ranking-list__number">3</span>
+                                        <div class="ranking-list__info">
+                                            <h4 class="ranking-list__title">Universal Studios Japan Guide</h4>
+                                            <span class="badge badge-experience">Experience</span>
+                                        </div>
+                                    </li>
+                                </ol>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Theme E: Fresh/Spring -->
+    <section class="theme-e theme-section">
+        <div class="theme-header">
+            <h2>Theme E - Fresh/Spring</h2>
+            <p>Clean and refreshing, featuring fresh mint green and soft purple tones that evoke springtime in Osaka. Modern typography with comfortable spacing creates a pleasant reading experience.</p>
+        </div>
+        
+        <div class="container">
+            <!-- Typography -->
+            <div class="section">
+                <h2>Typography</h2>
+                
+                <!-- Font Information -->
+                <div class="font-info">
+                    <h3>Font Family</h3>
+                    <div class="font-info-grid">
+                        <div class="font-info-item">
+                            <div class="font-info-label">Heading Font</div>
+                            <div class="font-info-value">Inter, Noto Sans JP, sans-serif</div>
+                            <div class="font-preview" style="font-family: var(--font-heading); font-weight: var(--font-bold);">The quick brown fox jumps over the lazy dog</div>
+                        </div>
+                        <div class="font-info-item">
+                            <div class="font-info-label">Body Font</div>
+                            <div class="font-info-value">Inter, Noto Sans JP, sans-serif</div>
+                            <div class="font-preview" style="font-family: var(--font-body); font-weight: var(--font-normal);">The quick brown fox jumps over the lazy dog</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="type-scale">
+                    <div class="type-sample">
+                        <div class="type-sample-label">Heading 1</div>
+                        <h1 class="type-sample-heading" style="font-size: var(--text-4xl);">Osakahacks Design System</h1>
+                    </div>
+                    <div class="type-sample">
+                        <div class="type-sample-label">Heading 2</div>
+                        <h2 class="type-sample-heading" style="font-size: var(--text-2xl); border-bottom: none; padding-bottom: 0; margin: 0;">Section Title</h2>
+                    </div>
+                    <div class="type-sample">
+                        <div class="type-sample-label">Heading 3</div>
+                        <h3 class="type-sample-heading" style="font-size: var(--text-xl); margin: 0;">Subsection Title</h3>
+                    </div>
+                    <div class="type-sample">
+                        <div class="type-sample-label">Body Text</div>
+                        <p class="type-sample-body" style="font-size: var(--text-base); margin: 0;">This is body text that demonstrates the fresh theme's clean typography. The mint green and soft purple palette creates a refreshing and modern aesthetic perfect for spring.</p>
+                    </div>
+                    <div class="type-sample">
+                        <div class="type-sample-label">Caption</div>
+                        <p class="type-sample-caption" style="margin: 0;">Small caption text for metadata and secondary information.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Color Palette -->
+            <div class="section">
+                <h2>Color Palette</h2>
+                
+                <h3>Primary Colors</h3>
+                <div class="color-grid">
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--color-primary);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Primary</div>
+                            <div class="color-value">#00C9A7</div>
+                        </div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--color-primary-dark);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Primary Dark</div>
+                            <div class="color-value">#00A689</div>
+                        </div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--color-primary-light);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Primary Light</div>
+                            <div class="color-value">#33D4B8</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3>Secondary Colors</h3>
+                <div class="color-grid">
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--color-secondary);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Secondary</div>
+                            <div class="color-value">#7B68EE</div>
+                        </div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--color-secondary-dark);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Secondary Dark</div>
+                            <div class="color-value">#5F4FD6</div>
+                        </div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--color-secondary-light);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Secondary Light</div>
+                            <div class="color-value">#9B8AF0</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3>Accent Colors</h3>
+                <div class="color-grid">
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--color-accent);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Accent</div>
+                            <div class="color-value">#FF6B9D</div>
+                        </div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--color-success);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Success</div>
+                            <div class="color-value">#4ECDC4</div>
+                        </div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--color-warning);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Warning</div>
+                            <div class="color-value">#FFD93D</div>
+                        </div>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-swatch" style="background-color: var(--color-error);"></div>
+                        <div class="color-info">
+                            <div class="color-name">Error</div>
+                            <div class="color-value">#FF6B6B</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Buttons -->
+            <div class="section">
+                <h2>Buttons</h2>
+                <div>
+                    <button class="btn btn-primary">Primary Button</button>
+                    <button class="btn btn-secondary">Secondary Button</button>
+                    <button class="btn btn-outline">Outline Button</button>
+                </div>
+            </div>
+            
+            <!-- Badges -->
+            <div class="section">
+                <h2>Category Badges</h2>
+                <div>
+                    <span class="badge badge-living">Living</span>
+                    <span class="badge badge-experience">Experience</span>
+                    <span class="badge badge-eating">Eating Out</span>
+                    <span class="badge badge-stay">Stay</span>
+                    <span class="badge badge-column">Column</span>
+                </div>
+            </div>
+            
+            <!-- Components -->
+            <div class="section">
+                <h2>Components</h2>
+                
+                <div class="demo-grid">
+                    <!-- Article Card -->
+                    <div>
+                        <h3>Article Card</h3>
+                        <article class="article-card">
+                            <a href="#" class="article-card__link">
+                                <div class="article-card__image">
+                                    <span class="article-card__badge">Living</span>
+                                </div>
+                                <div class="article-card__content">
+                                    <h3 class="article-card__title">
+                                        How to Find an Apartment in Osaka
+                                    </h3>
+                                    <p class="article-card__excerpt">
+                                        A complete guide to finding and renting an apartment in Osaka as a foreigner...
+                                    </p>
+                                    <div class="article-card__meta">
+                                        <time datetime="2025-11-19">Nov 19, 2025</time>
+                                        <span class="article-card__read-time">5 min read</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
+                    </div>
+                    
+                    <!-- Booking Widget -->
+                    <div>
+                        <h3>Booking.com Widget</h3>
+                        <aside class="widget widget-booking">
+                            <h3 class="widget__title">Find Hotels in Osaka</h3>
+                            <div class="widget__content">
+                                <form class="booking-form">
+                                    <div class="form-group">
+                                        <label for="checkin-e">Check-in</label>
+                                        <input type="date" id="checkin-e" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="checkout-e">Check-out</label>
+                                        <input type="date" id="checkout-e" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="area-e">Area</label>
+                                        <select id="area-e" class="form-control">
+                                            <option value="">All Areas</option>
+                                            <option value="umeda">Umeda</option>
+                                            <option value="namba">Namba</option>
+                                            <option value="shinsaibashi">Shinsaibashi</option>
+                                        </select>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary btn-block">
+                                        Search Hotels
+                                    </button>
+                                </form>
+                            </div>
+                        </aside>
+                    </div>
+                    
+                    <!-- Ranking Widget -->
+                    <div>
+                        <h3>Ranking Widget</h3>
+                        <aside class="widget widget-ranking">
+                            <h3 class="widget__title">Ranking</h3>
+                            <div class="widget__content">
+                                <ol class="ranking-list">
+                                    <li class="ranking-list__item">
+                                        <span class="ranking-list__number">1</span>
+                                        <div class="ranking-list__info">
+                                            <h4 class="ranking-list__title">Best Ramen Shops in Osaka</h4>
+                                            <span class="badge badge-eating">Eating Out</span>
+                                        </div>
+                                    </li>
+                                    <li class="ranking-list__item">
+                                        <span class="ranking-list__number">2</span>
+                                        <div class="ranking-list__info">
+                                            <h4 class="ranking-list__title">How to Get a Visa in Osaka</h4>
+                                            <span class="badge badge-living">Living</span>
+                                        </div>
+                                    </li>
+                                    <li class="ranking-list__item">
+                                        <span class="ranking-list__number">3</span>
+                                        <div class="ranking-list__info">
+                                            <h4 class="ranking-list__title">Universal Studios Japan Guide</h4>
+                                            <span class="badge badge-experience">Experience</span>
+                                        </div>
+                                    </li>
+                                </ol>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

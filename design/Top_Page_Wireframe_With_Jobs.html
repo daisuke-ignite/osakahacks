@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Osakahacks - Top Page Wireframe (Future Version with Jobs)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .wireframe-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        
+        /* Header */
+        .header {
+            background-color: #fff;
+            border-bottom: 2px solid #e0e0e0;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #FF6B35;
+        }
+        
+        .nav {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-item {
+            padding: 0.5rem 1rem;
+            border: 1px dashed #ccc;
+            background-color: #fafafa;
+            font-size: 0.9rem;
+        }
+        
+        .nav-item.jobs {
+            background-color: #fff3cd;
+            border-color: #F77F00;
+            font-weight: 600;
+        }
+        
+        .lang-selector {
+            padding: 0.5rem 1rem;
+            border: 1px solid #ccc;
+            background-color: #f0f0f0;
+            font-size: 0.9rem;
+        }
+        
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(135deg, #FF6B35 0%, #004E89 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
+        .hero-content {
+            text-align: center;
+            z-index: 2;
+        }
+        
+        .hero-title {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .hero-cta-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+        
+        .hero-cta {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: white;
+            color: #FF6B35;
+            font-weight: bold;
+            border-radius: 0.5rem;
+            text-decoration: none;
+        }
+        
+        .hero-cta.secondary {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        /* Search Bar */
+        .search-section {
+            padding: 2rem;
+            background-color: #fafafa;
+            text-align: center;
+        }
+        
+        .search-bar {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 1rem;
+            border: 2px solid #FF6B35;
+            border-radius: 2rem;
+            background-color: white;
+            display: flex;
+            align-items: center;
+        }
+        
+        .search-input {
+            flex: 1;
+            padding: 0.5rem 1rem;
+            border: none;
+            font-size: 1rem;
+        }
+        
+        .search-button {
+            padding: 0.5rem 1.5rem;
+            background-color: #FF6B35;
+            color: white;
+            border: none;
+            border-radius: 1rem;
+            font-weight: bold;
+        }
+        
+        /* Main Content */
+        .main-content {
+            display: flex;
+            gap: 2rem;
+            padding: 2rem;
+        }
+        
+        .content-area {
+            flex: 1;
+        }
+        
+        .sidebar {
+            width: 350px;
+            flex-shrink: 0;
+        }
+        
+        /* Section */
+        .section {
+            margin-bottom: 3rem;
+        }
+        
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e0e0e0;
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .section-link {
+            color: #FF6B35;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        /* Card Grid */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+        
+        .card {
+            border: 1px solid #e0e0e0;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            background-color: white;
+        }
+        
+        .card-image {
+            width: 100%;
+            height: 180px;
+            background: repeating-linear-gradient(
+                45deg,
+                #f0f0f0,
+                #f0f0f0 10px,
+                #e0e0e0 10px,
+                #e0e0e0 20px
+            );
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 0.9rem;
+            position: relative;
+        }
+        
+        .card-badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            padding: 0.25rem 0.75rem;
+            background-color: #FF6B35;
+            color: white;
+            font-size: 0.75rem;
+            font-weight: bold;
+            border-radius: 0.25rem;
+        }
+        
+        .card-badge.jobs {
+            background-color: #F77F00;
+        }
+        
+        .card-content {
+            padding: 1rem;
+        }
+        
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+        
+        .card-excerpt {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 0.75rem;
+            line-height: 1.5;
+        }
+        
+        .card-meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.85rem;
+            color: #999;
+        }
+        
+        /* Job Card Specific Styles */
+        .job-card {
+            border-left: 4px solid #F77F00;
+        }
+        
+        .job-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+        }
+        
+        .job-tag {
+            padding: 0.25rem 0.5rem;
+            background-color: #fff3cd;
+            color: #F77F00;
+            border-radius: 0.25rem;
+            font-size: 0.8rem;
+        }
+        
+        /* Area Grid */
+        .area-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
+        
+        .area-card {
+            aspect-ratio: 4 / 3;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            position: relative;
+            background: repeating-linear-gradient(
+                45deg,
+                #e0e0e0,
+                #e0e0e0 10px,
+                #d0d0d0 10px,
+                #d0d0d0 20px
+            );
+        }
+        
+        .area-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+        }
+        
+        .area-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 0.25rem;
+        }
+        
+        .area-count {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        /* Category Grid */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1rem;
+        }
+        
+        .category-card {
+            padding: 1.5rem 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 0.5rem;
+            text-align: center;
+            background-color: white;
+            transition: all 0.3s;
+        }
+        
+        .category-card:hover {
+            border-color: #F77F00;
+            background-color: #fff3cd;
+        }
+        
+        .category-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .category-name {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        /* Sidebar Widgets */
+        .widget {
+            background-color: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .widget-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        
+        .widget-booking {
+            background: linear-gradient(135deg, #004E89 0%, #0066B3 100%);
+            color: white;
+        }
+        
+        .widget-booking .widget-title {
+            color: white;
+        }
+        
+        .widget-jobs {
+            background: linear-gradient(135deg, #F77F00 0%, #FFB627 100%);
+            color: white;
+        }
+        
+        .widget-jobs .widget-title {
+            color: white;
+        }
+        
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        
+        .form-label {
+            display: block;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 0.375rem;
+            background-color: rgba(255,255,255,0.1);
+            color: white;
+        }
+        
+        .widget-booking .form-input::placeholder,
+        .widget-jobs .form-input::placeholder {
+            color: rgba(255,255,255,0.7);
+        }
+        
+        .btn-search {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: white;
+            color: #004E89;
+            border: none;
+            border-radius: 0.375rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .btn-search-jobs {
+            background-color: white;
+            color: #F77F00;
+        }
+        
+        .article-list {
+            list-style: none;
+        }
+        
+        .article-list-item {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .article-list-item:last-child {
+            border-bottom: none;
+        }
+        
+        .article-thumb {
+            width: 80px;
+            height: 80px;
+            background: repeating-linear-gradient(
+                45deg,
+                #f0f0f0,
+                #f0f0f0 5px,
+                #e0e0e0 5px,
+                #e0e0e0 10px
+            );
+            border-radius: 0.375rem;
+            flex-shrink: 0;
+        }
+        
+        .article-info {
+            flex: 1;
+        }
+        
+        .article-list-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+        
+        .job-list-item {
+            padding: 1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .job-list-item:last-child {
+            border-bottom: none;
+        }
+        
+        .job-list-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+        
+        .job-list-company {
+            font-size: 0.85rem;
+            opacity: 0.9;
+            color: white;
+        }
+        
+        .ranking-list {
+            list-style: none;
+        }
+        
+        .ranking-item {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .ranking-item:last-child {
+            border-bottom: none;
+        }
+        
+        .ranking-number {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #FF6B35, #F77F00);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0.375rem;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        
+        .language-list {
+            list-style: none;
+        }
+        
+        .language-item {
+            padding: 0.75rem;
+            border-radius: 0.375rem;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .language-item:hover {
+            background-color: #f0f0f0;
+        }
+        
+        .language-item.active {
+            background-color: #FF6B35;
+            color: white;
+            font-weight: bold;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 3rem 2rem 1rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-column h4 {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.5rem;
+            color: #ccc;
+        }
+        
+        .footer-language {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .footer-language-item {
+            padding: 0.5rem 0;
+            color: #ccc;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        
+        .footer-language-item:hover {
+            color: white;
+        }
+        
+        .footer-language-item.active {
+            color: #FF6B35;
+            font-weight: 600;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #555;
+            color: #999;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .main-content {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                width: 100%;
+            }
+            
+            .card-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .area-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .category-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .area-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .nav {
+                display: none;
+            }
+            
+            .hero-cta-group {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wireframe-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">OSAKAHACKS</div>
+            <nav class="nav">
+                <div class="nav-item">Living</div>
+                <div class="nav-item jobs">Jobs</div>
+                <div class="nav-item">Experience</div>
+                <div class="nav-item">Eating Out</div>
+                <div class="nav-item">Stay</div>
+                <div class="nav-item">Column</div>
+            </nav>
+            <div class="lang-selector">🌐 EN</div>
+        </header>
+        
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Visit, Live, Work in Osaka</h1>
+                <p class="hero-subtitle">Your Complete Guide to Life in Osaka</p>
+                <div class="hero-cta-group">
+                    <a href="#" class="hero-cta">Explore Living Guides</a>
+                    <a href="#" class="hero-cta secondary">Find Jobs</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Search Bar -->
+        <section class="search-section">
+            <div class="search-bar">
+                <input type="search" class="search-input" placeholder="Find housing, restaurants, jobs, or tips in Osaka...">
+                <button class="search-button">Search</button>
+            </div>
+        </section>
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Content Area -->
+            <div class="content-area">
+                <!-- Featured Articles -->
+                <section class="section">
+                    <div class="section-header">
+                        <h2 class="section-title">Featured Articles</h2>
+                        <a href="#" class="section-link">View all →</a>
+                    </div>
+                    <div class="card-grid">
+                        <div class="card">
+                            <div class="card-image">
+                                <span class="card-badge">Living</span>
+                                [Image Placeholder]
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">How to Find an Apartment in Osaka as a Foreigner</h3>
+                                <p class="card-excerpt">A complete guide to finding and renting an apartment in Osaka...</p>
+                                <div class="card-meta">
+                                    <span>Nov 19, 2025</span>
+                                    <span>5 min read</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-image">
+                                <span class="card-badge">Eating Out</span>
+                                [Image Placeholder]
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">Best Takoyaki Spots in Dotonbori</h3>
+                                <p class="card-excerpt">Discover the most authentic takoyaki restaurants in Osaka's famous district...</p>
+                                <div class="card-meta">
+                                    <span>Nov 18, 2025</span>
+                                    <span>4 min read</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-image">
+                                <span class="card-badge">Experience</span>
+                                [Image Placeholder]
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">Osaka Castle: Complete Visitor Guide</h3>
+                                <p class="card-excerpt">Everything you need to know before visiting Osaka's iconic castle...</p>
+                                <div class="card-meta">
+                                    <span>Nov 17, 2025</span>
+                                    <span>6 min read</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Featured Jobs -->
+                <section class="section">
+                    <div class="section-header">
+                        <h2 class="section-title">Featured Jobs</h2>
+                        <a href="#" class="section-link">View all →</a>
+                    </div>
+                    <div class="card-grid">
+                        <div class="card job-card">
+                            <div class="card-image">
+                                <span class="card-badge jobs">Jobs</span>
+                                [Company Logo Placeholder]
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">English Teacher - Full Time</h3>
+                                <p class="card-excerpt">Join our team as an English teacher in central Osaka...</p>
+                                <div class="job-meta">
+                                    <span class="job-tag">Full-time</span>
+                                    <span class="job-tag">Umeda</span>
+                                    <span class="job-tag">¥250,000-¥300,000</span>
+                                </div>
+                                <div class="card-meta">
+                                    <span>Posted: Nov 19, 2025</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card job-card">
+                            <div class="card-image">
+                                <span class="card-badge jobs">Jobs</span>
+                                [Company Logo Placeholder]
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">IT Support Specialist</h3>
+                                <p class="card-excerpt">Looking for bilingual IT support specialist with Japanese and English...</p>
+                                <div class="job-meta">
+                                    <span class="job-tag">Full-time</span>
+                                    <span class="job-tag">Namba</span>
+                                    <span class="job-tag">¥300,000-¥400,000</span>
+                                </div>
+                                <div class="card-meta">
+                                    <span>Posted: Nov 18, 2025</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card job-card">
+                            <div class="card-image">
+                                <span class="card-badge jobs">Jobs</span>
+                                [Company Logo Placeholder]
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">Restaurant Staff - Part Time</h3>
+                                <p class="card-excerpt">Part-time restaurant staff needed in Dotonbori area...</p>
+                                <div class="job-meta">
+                                    <span class="job-tag">Part-time</span>
+                                    <span class="job-tag">Dotonbori</span>
+                                    <span class="job-tag">¥1,200/hour</span>
+                                </div>
+                                <div class="card-meta">
+                                    <span>Posted: Nov 17, 2025</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Popular Articles -->
+                <section class="section">
+                    <div class="section-header">
+                        <h2 class="section-title">Popular Articles</h2>
+                        <a href="#" class="section-link">View all →</a>
+                    </div>
+                    <div class="card-grid">
+                        <div class="card">
+                            <div class="card-image">
+                                <span class="card-badge">Living</span>
+                                [Image Placeholder]
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">Complete Visa Guide for Osaka</h3>
+                                <p class="card-excerpt">All visa types and application processes explained...</p>
+                                <div class="card-meta">
+                                    <span>Nov 15, 2025</span>
+                                    <span>8 min read</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-image">
+                                <span class="card-badge">Stay</span>
+                                [Image Placeholder]
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">Best Budget Hotels in Namba</h3>
+                                <p class="card-excerpt">Affordable accommodation options in the heart of Osaka...</p>
+                                <div class="card-meta">
+                                    <span>Nov 14, 2025</span>
+                                    <span>5 min read</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-image">
+                                <span class="card-badge">Experience</span>
+                                [Image Placeholder]
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">Universal Studios Japan Tips</h3>
+                                <p class="card-excerpt">Insider tips to make the most of your USJ visit...</p>
+                                <div class="card-meta">
+                                    <span>Nov 13, 2025</span>
+                                    <span>7 min read</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Job Categories -->
+                <section class="section">
+                    <div class="section-header">
+                        <h2 class="section-title">Browse Jobs by Category</h2>
+                        <a href="#" class="section-link">View all →</a>
+                    </div>
+                    <div class="category-grid">
+                        <div class="category-card">
+                            <div class="category-icon">👨‍🏫</div>
+                            <div class="category-name">Teaching</div>
+                        </div>
+                        <div class="category-card">
+                            <div class="category-icon">💻</div>
+                            <div class="category-name">IT/Tech</div>
+                        </div>
+                        <div class="category-card">
+                            <div class="category-icon">🍽️</div>
+                            <div class="category-name">Restaurant</div>
+                        </div>
+                        <div class="category-card">
+                            <div class="category-icon">🏢</div>
+                            <div class="category-name">Business</div>
+                        </div>
+                        <div class="category-card">
+                            <div class="category-icon">🎨</div>
+                            <div class="category-name">Creative</div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Explore by Area -->
+                <section class="section">
+                    <div class="section-header">
+                        <h2 class="section-title">Explore by Area</h2>
+                    </div>
+                    <div class="area-grid">
+                        <div class="area-card">
+                            <div class="area-overlay">
+                                <div class="area-name">Umeda</div>
+                                <div class="area-count">45 articles</div>
+                            </div>
+                        </div>
+                        <div class="area-card">
+                            <div class="area-overlay">
+                                <div class="area-name">Namba</div>
+                                <div class="area-count">38 articles</div>
+                            </div>
+                        </div>
+                        <div class="area-card">
+                            <div class="area-overlay">
+                                <div class="area-name">Shinsaibashi</div>
+                                <div class="area-count">32 articles</div>
+                            </div>
+                        </div>
+                        <div class="area-card">
+                            <div class="area-overlay">
+                                <div class="area-name">Dotonbori</div>
+                                <div class="area-count">28 articles</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Latest News -->
+                <section class="section">
+                    <div class="section-header">
+                        <h2 class="section-title">Latest News</h2>
+                        <a href="#" class="section-link">View all →</a>
+                    </div>
+                    <ul class="article-list">
+                        <li class="article-list-item">
+                            <div class="article-thumb"></div>
+                            <div class="article-info">
+                                <h4 class="article-list-title">New Immigration Rules for 2025</h4>
+                                <div class="card-meta">
+                                    <span>Nov 19, 2025</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="article-list-item">
+                            <div class="article-thumb"></div>
+                            <div class="article-info">
+                                <h4 class="article-list-title">Osaka Expo 2025 Updates</h4>
+                                <div class="card-meta">
+                                    <span>Nov 18, 2025</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+            
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <!-- Booking Widget -->
+                <div class="widget widget-booking">
+                    <h3 class="widget-title">Find Hotels in Osaka</h3>
+                    <div class="form-group">
+                        <label class="form-label">Check-in</label>
+                        <input type="date" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Check-out</label>
+                        <input type="date" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Area</label>
+                        <select class="form-input">
+                            <option>All Areas</option>
+                            <option>Umeda</option>
+                            <option>Namba</option>
+                        </select>
+                    </div>
+                    <button class="btn-search">Search Hotels</button>
+                </div>
+                
+                <!-- Job Search Widget -->
+                <div class="widget widget-jobs">
+                    <h3 class="widget-title">Find Jobs in Osaka</h3>
+                    <div class="form-group">
+                        <label class="form-label">Job Type</label>
+                        <select class="form-input">
+                            <option>All Types</option>
+                            <option>Full-time</option>
+                            <option>Part-time</option>
+                            <option>Contract</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Category</label>
+                        <select class="form-input">
+                            <option>All Categories</option>
+                            <option>Teaching</option>
+                            <option>IT/Tech</option>
+                            <option>Restaurant</option>
+                            <option>Business</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Area</label>
+                        <select class="form-input">
+                            <option>All Areas</option>
+                            <option>Umeda</option>
+                            <option>Namba</option>
+                            <option>Shinsaibashi</option>
+                        </select>
+                    </div>
+                    <button class="btn-search btn-search-jobs">Search Jobs</button>
+                </div>
+                
+                <!-- Featured Jobs Widget -->
+                <div class="widget">
+                    <h3 class="widget-title">Featured Jobs</h3>
+                    <ul class="article-list">
+                        <li class="job-list-item" style="background-color: #fff3cd; border-radius: 0.375rem; margin-bottom: 0.5rem;">
+                            <h4 class="job-list-title" style="color: #333;">English Teacher - Full Time</h4>
+                            <p class="job-list-company" style="color: #666;">ABC Language School</p>
+                            <div class="job-meta" style="margin-top: 0.5rem;">
+                                <span class="job-tag">Umeda</span>
+                                <span class="job-tag">¥250k-¥300k</span>
+                            </div>
+                        </li>
+                        <li class="job-list-item" style="background-color: #fff3cd; border-radius: 0.375rem; margin-bottom: 0.5rem;">
+                            <h4 class="job-list-title" style="color: #333;">IT Support Specialist</h4>
+                            <p class="job-list-company" style="color: #666;">Tech Solutions Inc.</p>
+                            <div class="job-meta" style="margin-top: 0.5rem;">
+                                <span class="job-tag">Namba</span>
+                                <span class="job-tag">¥300k-¥400k</span>
+                            </div>
+                        </li>
+                        <li class="job-list-item" style="background-color: #fff3cd; border-radius: 0.375rem;">
+                            <h4 class="job-list-title" style="color: #333;">Restaurant Staff</h4>
+                            <p class="job-list-company" style="color: #666;">Osaka Dining</p>
+                            <div class="job-meta" style="margin-top: 0.5rem;">
+                                <span class="job-tag">Dotonbori</span>
+                                <span class="job-tag">Part-time</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Popular Articles Widget -->
+                <div class="widget">
+                    <h3 class="widget-title">Popular Articles</h3>
+                    <ul class="article-list">
+                        <li class="article-list-item">
+                            <div class="article-thumb"></div>
+                            <div class="article-info">
+                                <h4 class="article-list-title">Best Ramen in Osaka</h4>
+                            </div>
+                        </li>
+                        <li class="article-list-item">
+                            <div class="article-thumb"></div>
+                            <div class="article-info">
+                                <h4 class="article-list-title">Visa Application Guide</h4>
+                            </div>
+                        </li>
+                        <li class="article-list-item">
+                            <div class="article-thumb"></div>
+                            <div class="article-info">
+                                <h4 class="article-list-title">USJ Complete Guide</h4>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Ranking Widget -->
+                <div class="widget">
+                    <h3 class="widget-title">Ranking</h3>
+                    <ol class="ranking-list">
+                        <li class="ranking-item">
+                            <div class="ranking-number">1</div>
+                            <div class="article-info">
+                                <h4 class="article-list-title">Best Ramen Shops in Osaka</h4>
+                            </div>
+                        </li>
+                        <li class="ranking-item">
+                            <div class="ranking-number">2</div>
+                            <div class="article-info">
+                                <h4 class="article-list-title">How to Get a Visa</h4>
+                            </div>
+                        </li>
+                        <li class="ranking-item">
+                            <div class="ranking-number">3</div>
+                            <div class="article-info">
+                                <h4 class="article-list-title">USJ Guide 2025</h4>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+                
+            </aside>
+        </div>
+        
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>About Osakahacks</h4>
+                    <ul class="footer-links">
+                        <li>About Us</li>
+                        <li>Contact</li>
+                        <li>Advertise</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Categories</h4>
+                    <ul class="footer-links">
+                        <li>Living</li>
+                        <li>Jobs</li>
+                        <li>Experience</li>
+                        <li>Eating Out</li>
+                        <li>Stay</li>
+                        <li>Column</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li>Privacy Policy</li>
+                        <li>Terms of Service</li>
+                        <li>Cookie Policy</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Follow Us</h4>
+                    <ul class="footer-links">
+                        <li>Facebook</li>
+                        <li>Instagram</li>
+                        <li>Twitter</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Language</h4>
+                    <div class="footer-language">
+                        <div class="footer-language-item active">🇬🇧 English</div>
+                        <div class="footer-language-item">🇯🇵 日本語</div>
+                        <div class="footer-language-item">🇨🇳 中文</div>
+                        <div class="footer-language-item">🇰🇷 한국어</div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                © 2025 IGNITE All rights reserved.
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
+
